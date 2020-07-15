@@ -1,0 +1,9 @@
+composer create-project --prefer-dist yiisoft/yii2-app-basic . 
+
+
+php yii message/config-template translate/config.php
+
+php yii message translate/config.php
+
+
+

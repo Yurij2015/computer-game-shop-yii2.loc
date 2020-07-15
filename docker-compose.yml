@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  webserver_gameshop:
+    image: yiisoftware/yii2-php:7.4-apache
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ${PROJECT_ROOT}/server/:/app:delegated
+    ports:
+      - '80:80'
+    networks:
+      - backend
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+    depends_on:
+      - mysql_gameshop
+    container_name: webserver_gameshop
+  mysql_gameshop:
+    image: mysql:5.7
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root3004917779
+      MYSQL_USER: yurijmo
+      MYSQL_PASSWORD: 3004917779
+      MYSQL_DATABASE: db_gameshop
+    networks:
+      - backend
+    container_name: mysql_gameshop
+  phpmyadmin_gameshop:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_gameshop
+    ports:
+      - 2323:80
+    links:
+      - mysql_gameshop:db
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:
+volumes:
+  data:
