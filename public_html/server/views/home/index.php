@@ -28,7 +28,7 @@
     <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
             <a href="/product/tyyy">
-                <img class="card-img-top" src="yyy" alt=""></a>
+                <img class="card-img-top" src="" alt=""></a>
             <div class="card-body">
                 <h5 class="card-title">
                     <a href="/product/jjj">gggg</a>

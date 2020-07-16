@@ -64,11 +64,7 @@ AppAsset::register($this);
 <div class="container" style="margin-bottom: 130px;">
     <div class="row">
         <div class="col-lg-3">
-            <h3 class="my-3">Категории</h3>
-            <div class="list-group">
-                <a href="/category/" class="list-group-item" style="text-decoration: none;">
-                </a>
-            </div>
+            <?= $this->render('/layouts/sidebar'); ?>
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
