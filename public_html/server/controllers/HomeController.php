@@ -15,7 +15,7 @@ class HomeController extends AppController
 {
     function actionIndex()
     {
-        $products = Product::find()->asArray()->all();
+        $products = Product::find()->all();
         return $this->render('index', compact('products'));
     }
 }
