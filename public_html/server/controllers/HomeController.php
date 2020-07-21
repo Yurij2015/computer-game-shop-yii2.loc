@@ -9,10 +9,13 @@
 namespace app\controllers;
 
 
+use app\models\Product;
+
 class HomeController extends AppController
 {
     function actionIndex()
     {
-        return $this->render('index');
+        $products = Product::find()->asArray()->all();
+        return $this->render('index', compact('products'));
     }
 }

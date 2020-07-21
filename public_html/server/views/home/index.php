@@ -25,22 +25,25 @@
     </a>
 </div>
 <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-            <a href="/product/tyyy">
-                <img class="card-img-top" src="" alt=""></a>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="/product/jjj">gggg</a>
-                </h5>
-                <h5></h5>
-                <p class="card-text">555</p>
-            </div>
-            <div class="card-footer">
-                <a href="/cart/add/ttttt"
-                   class="btn btn-outline-primary btn-sm float-right">В корзину</a>
+    <?php foreach ($products as $product): ?>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a href="/product/tyyy">
+                    <?= \yii\helpers\Html::img("@web/game_images/$product[img]", ['alt' => $product['title'], 'class' => 'card-img-top']) ?>
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/product/jjj"><?= $product['title'] ?></a>
+                    </h5>
+                    <h5></h5>
+                    <p class="card-text">555</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/cart/add/ttttt"
+                       class="btn btn-outline-primary btn-sm float-right">В корзину</a>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 </div>
 <!-- /.row -->
