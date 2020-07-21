@@ -13,7 +13,7 @@ $config = [
     'layout' => 'shoptemplate',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -53,6 +53,7 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+                'category/<id:\d+>' => 'category/view',
             ],
         ],
 
