@@ -26,6 +26,7 @@ use yii\helpers\Url;
                 </div>
             </div>
         <?php endforeach; ?>
+
     <?php else: ?>
         <div class="col-lg-12 col-md-12 mb-12">
             <h5>В этой категории еще нет игр!</h5>
