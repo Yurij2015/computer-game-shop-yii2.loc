@@ -24,9 +24,9 @@ class CategoryController extends AppController
 //        $products = Product::find()->where(['category_id' => $id])->all();
 
         $query = Product::find()->where(['category_id' => $id]);
-        $pages = new Pagination(['totalCount' => $query->count()]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 3]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
 
-        return $this->render('view', compact('products', 'category'));
+        return $this->render('view', compact('products', 'category', 'pages'));
     }
 }

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 ?>
 <h3 class="my-3">Товары категории: <?= $category['title'] ?></h3>
@@ -26,7 +27,10 @@ use yii\helpers\Url;
                 </div>
             </div>
         <?php endforeach; ?>
-
+<!--        <div class="clearfix"></div>-->
+        <div class="col-md-12">
+            <?= LinkPager::widget(['pagination' => $pages]) ?>
+        </div>
     <?php else: ?>
         <div class="col-lg-12 col-md-12 mb-12">
             <h5>В этой категории еще нет игр!</h5>
