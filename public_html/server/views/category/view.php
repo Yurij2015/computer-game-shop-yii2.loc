@@ -27,10 +27,19 @@ use yii\widgets\LinkPager;
                 </div>
             </div>
         <?php endforeach; ?>
-<!--        <div class="clearfix"></div>-->
+        <!--        <div class="clearfix"></div>-->
         <div class="col-md-12">
-            <?= LinkPager::widget(['pagination' => $pages]) ?>
+            <?= LinkPager::widget([
+                'pagination' => $pages,
+                'nextPageLabel' => 'Вперед',
+                'prevPageLabel' => 'Назад',
+                'pageCssClass' => 'page-item',
+                'linkOptions' => ['class' => 'page-link'],
+
+
+            ]) ?>
         </div>
+
     <?php else: ?>
         <div class="col-lg-12 col-md-12 mb-12">
             <h5>В этой категории еще нет игр!</h5>
