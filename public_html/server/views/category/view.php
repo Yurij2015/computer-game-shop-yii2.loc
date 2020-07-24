@@ -21,8 +21,9 @@ use yii\widgets\LinkPager;
                         <p class="card-text"><?= $product->price ?></p>
                     </div>
                     <div class="card-footer">
-                        <a href="/cart/add/ttttt"
-                           class="btn btn-outline-primary btn-sm float-right">В корзину</a>
+                        <a href="<?= Url::to(['cart/add', 'id' => $product->id]) ?>"
+                           class="btn btn-outline-primary btn-sm float-right add-to-cart" data-id="<?= $product->id ?>">В
+                            корзину</a>
                     </div>
                 </div>
             </div>
@@ -35,8 +36,6 @@ use yii\widgets\LinkPager;
                 'prevPageLabel' => 'Назад',
                 'pageCssClass' => 'page-item',
                 'linkOptions' => ['class' => 'page-link'],
-
-
             ]) ?>
         </div>
 

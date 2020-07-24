@@ -10,6 +10,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language; ?>">
 <head>
+    <base href="/">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
@@ -78,7 +79,6 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-
 
 <!-- Page Content -->
 <div class="container" style="margin-bottom: 130px;">
