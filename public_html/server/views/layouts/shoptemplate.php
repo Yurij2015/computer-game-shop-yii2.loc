@@ -40,9 +40,7 @@ AppAsset::register($this);
                     <a class="nav-link" href="/catalog/">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart/">Корзина ()</a>
-
-
+                    <a class="nav-link" href="/cart/" data-toggle="modal" data-target="#modal-cart">Корзина ()</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/login/">Вход</a>
@@ -53,11 +51,34 @@ AppAsset::register($this);
                 <li class="nav-item">
                     <a class="nav-link" href="/user/logout/">Выход</a>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
+
+<!-- The Modal -->
+<div class="modal" id="modal-cart">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Корзина</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Продолжить покупки</button>
+                <a href="<?= Url::to('cart/view') ?>" class="btn btn-success">Оформить заказ</a>
+                <button type="button" class="btn btn-danger">Очистить корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container" style="margin-bottom: 130px;">
