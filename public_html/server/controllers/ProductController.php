@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 
+use app\models\Category;
 use app\models\Product;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -21,4 +22,7 @@ class ProductController extends AppController
         return $this->render('view', compact('product'));
 
     }
+
+
+
 }
