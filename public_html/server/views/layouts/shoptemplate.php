@@ -41,7 +41,7 @@ AppAsset::register($this);
                     <a class="nav-link" href="/catalog/">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart/" data-toggle="modal" data-target="#modal-cart">Корзина ()</a>
+                    <a class="nav-link" href="/cart/" data-toggle="modal" data-target="#modal-cart">Корзина (<span class="cart-sum"><?= $_SESSION['cart.sum'] ?? '0' ?> р.</span>)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/login/">Вход</a>
@@ -68,7 +68,7 @@ AppAsset::register($this);
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
