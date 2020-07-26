@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\models\Cart;
 use app\models\Product;
+use Yii;
 
 class CartController extends AppController
 {
@@ -53,6 +54,12 @@ class CartController extends AppController
         $session->remove('cart.sum');
         return $this->renderPartial('cart-modal', compact('session'));
 
+    }
+
+    public function actionView()
+    {
+        $this->setMeta("Оформление заказа :: " . Yii::$app->name);
+        return $this->render('view');
     }
 
 }
