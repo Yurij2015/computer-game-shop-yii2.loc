@@ -56,10 +56,12 @@ class CartController extends AppController
 
     }
 
-    public function actionView()
+    public function actionCheckout()
     {
         $this->setMeta("Оформление заказа :: " . Yii::$app->name);
-        return $this->render('view');
+        $session = \Yii::$app->session;
+
+        return $this->render('checkout', compact('session'));
     }
 
 }

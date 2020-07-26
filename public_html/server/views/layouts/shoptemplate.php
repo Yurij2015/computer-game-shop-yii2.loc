@@ -74,7 +74,7 @@ AppAsset::register($this);
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Продолжить покупки</button>
-                <a href="<?= Url::to('cart/view') ?>" class="btn btn-success">Оформить заказ</a>
+                <a href="<?= Url::to('cart/checkout') ?>" class="btn btn-success">Оформить заказ</a>
                 <button type="button" onclick="clearCart()" class="btn btn-danger">Очистить корзину</button>
             </div>
         </div>
