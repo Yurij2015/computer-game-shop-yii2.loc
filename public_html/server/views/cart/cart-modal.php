@@ -27,7 +27,7 @@ if (!empty($session['cart'])): ?>
             <?php endforeach ?>
             <tr>
                 <td colspan="4">Итого:</td>
-                <td id="cart-qty"><?= $session['cart.qty'] ?></td>
+                <td id="cart-qty"><?= $session['cart.qty'] ?> игр</td>
             </tr>
             <tr>
                 <td colspan="4">На сумму:</td>

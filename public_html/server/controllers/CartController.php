@@ -25,7 +25,23 @@ class CartController extends AppController
         }
 
         return $this->redirect(\Yii::$app->request->referrer);
+    }
 
+    public function actionShow()
+    {
+        $session = \Yii::$app->session;
+        $session->open();
+        return $this->renderPartial('cart-modal', compact('session'));
+    }
+
+    public function actionDelItem()
+    {
+        $id = \Yii::$app->request->get('id');
+        $session = \Yii::$app->session;
+        $session->open();
+        $cart = new Cart();
+        $cart->renewcart($id);
+        return $this->renderPartial('cart-modal', compact('session'));
     }
 
 
