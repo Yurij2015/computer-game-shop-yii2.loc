@@ -4,7 +4,7 @@
 function showCart(cart) {
     $('#modal-cart .modal-body').html(cart);
     $('#modal-cart').modal();
-    let cartSum = $('#cart-sum').text() ? $('#cart-sum').text() : '0 р.';
+    let cartSum = $('#cart-sum').text() ? $('#cart-sum').text() : '0 ₽';
     if (cartSum) {
         $('.cart-sum').text(cartSum);
     }
@@ -13,6 +13,20 @@ function showCart(cart) {
 function getCart() {
     $.ajax({
         url: 'cart/show',
+        type: 'GET',
+        success: function (res) {
+            if (!res) alert('Ошибка');
+            showCart(res);
+        },
+        error: function () {
+            alert('Error!');
+        }
+    });
+}
+
+function clearCart() {
+    $.ajax({
+        url: 'cart/clear',
         type: 'GET',
         success: function (res) {
             if (!res) alert('Ошибка');
