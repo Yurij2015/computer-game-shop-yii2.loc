@@ -49,6 +49,6 @@ if (!empty($session['cart'])): ?>
     </div>
     <!--    </div>-->
     <?php else: ?>
-        <h3>Корзина пуста</h3>
+        <h3 class="my-3">Корзина пуста</h3>
     <?php endif; ?>
 </div>
