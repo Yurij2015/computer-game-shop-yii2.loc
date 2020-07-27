@@ -79,6 +79,13 @@ class CartController extends AppController
             } else {
                 $transaction->commit();
                 Yii::$app->session->setFlash('success', "Заказ оформлен успешно!");
+
+                Yii::$app->mailer->compose('order', ['session' => $session])
+                    ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
+                    ->setTo([$order->email, Yii::$app->params['adminEmail']])
+                    ->setSubject('Заказ на сайте')
+                    ->send();
+
                 $session->remove('cart');
                 $session->remove('cart.qty');
                 $session->remove('cart.sum');
