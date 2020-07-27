@@ -64,6 +64,10 @@ $('#modal-cart .modal-body').on('click', '.del-item', function () {
         type: 'GET',
         success: function (res) {
             if (!res) alert('Ошибка');
+            let now_lacation = document.location.pathname;
+            if (now_lacation === '/cart/checkout') {
+                location = 'cart/checkout'
+            }
             showCart(res);
         },
         error: function () {
