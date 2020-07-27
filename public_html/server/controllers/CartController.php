@@ -5,6 +5,7 @@ namespace app\controllers;
 
 
 use app\models\Cart;
+use app\models\Order;
 use app\models\Product;
 use Yii;
 
@@ -64,8 +65,8 @@ class CartController extends AppController
     {
         $this->setMeta("Оформление заказа :: " . Yii::$app->name);
         $session = \Yii::$app->session;
-
-        return $this->render('checkout', compact('session'));
+        $order = new Order();
+        return $this->render('checkout', compact('session', 'order'));
     }
 
 }

@@ -1,5 +1,8 @@
-<?php use yii\helpers\Html;
+<?php
+
+use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 if (!empty($session['cart'])): ?>
 <h3 class="my-3">Оформление заказа</h3>
@@ -46,9 +49,22 @@ if (!empty($session['cart'])): ?>
             </tr>
             </tbody>
         </table>
+        <hr>
     </div>
-    <!--    </div>-->
+    <div class="col-md-12">
+        <h4>Форма заказа</h4>
+        <?php $form = ActiveForm::begin() ?>
+        <?= $form->field($order, 'name') ?>
+        <?= $form->field($order, 'email') ?>
+        <?= $form->field($order, 'phone') ?>
+        <?= $form->field($order, 'address') ?>
+        <?= $form->field($order, 'note')->textarea(['rows' => 5]) ?>
+        <?= Html::submitButton('Заказать', ['class' => 'btn btn-primary float-right']) ?>
+        <?php ActiveForm::end() ?>
+    </div>
     <?php else: ?>
         <h3 class="my-3">Корзина пуста</h3>
     <?php endif; ?>
 </div>
+<hr>
+
