@@ -1,10 +1,12 @@
 <?php
 
+use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-if (!empty($session['cart'])): ?>
+if (!empty($session['cart'])):
+?>
 <h3 class="my-3">Оформление заказа</h3>
 <div class="row">
     <div class="table-responsive cart-table">

@@ -1,6 +1,7 @@
 <?php
 
 use app\assets\AppAsset;
+use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -89,6 +90,7 @@ AppAsset::register($this);
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
+            <?= Alert::widget() ?>
             <?= $content; ?>
         </div>
         <!-- /.col-lg-9 -->
