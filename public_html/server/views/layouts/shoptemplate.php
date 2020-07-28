@@ -39,20 +39,14 @@ AppAsset::register($this);
                     <!--                    <a class="nav-link" href="/about/">О магазине</a>-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/catalog/">Каталог</a>
+                    <a class="nav-link" href="/category/1">Каталог</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="getCart()" data-toggle="modal" data-target="#modal-cart">Корзина
                         (<span class="cart-sum"><?= $_SESSION['cart.sum'] ?? '0' ?> ₽</span>)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/login/">Вход</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cabinet/">Кабинет</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/user/logout/">Выход</a>
+                    <a class="nav-link" href="/admin">Админ</a>
                 </li>
             </ul>
         </div>

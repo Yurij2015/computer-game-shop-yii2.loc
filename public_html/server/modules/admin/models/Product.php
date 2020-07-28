@@ -47,7 +47,7 @@ class Product extends \yii\db\ActiveRecord
             [['content'], 'string'],
             [['price', 'old_price'], 'number'],
             [['price', 'old_price'], 'default', 'value' => 0],
-            [['imt'], 'default', 'value' => 'game_images/no-image.jpg'],
+            [['img'], 'default', 'value' => 'game_images/no-image.jpg'],
             [['title', 'description', 'keywords', 'img'], 'string', 'max' => 255],
             //[['file'], 'image'],
         ];

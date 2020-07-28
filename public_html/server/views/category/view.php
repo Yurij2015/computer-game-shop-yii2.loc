@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 ?>
-<h3 class="my-3">Товары категории: <?= $category['title'] ?></h3>
+<h3 class="my-3">Игры категории: <?= $category['title'] ?></h3>
 <div class="row">
     <?php if (!empty($products)) : ?>
         <?php foreach ($products as $product): ?>
