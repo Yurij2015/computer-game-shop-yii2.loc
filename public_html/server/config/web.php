@@ -90,6 +90,18 @@ $config = [
         ],
 
     ],
+
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'path' => 'game_images',
+                'name' => 'GameImages'
+            ],
+        ]
+    ],
+
     'params' => $params,
 ];
 
