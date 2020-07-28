@@ -2,10 +2,12 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\OrderProduct;
 use Yii;
 use app\modules\admin\models\Order;
 use yii\data\ActiveDataProvider;
 use app\modules\admin\controllers\AppAdminController;
+use yii\db\StaleObjectException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -87,6 +89,7 @@ class OrderController extends AppAdminController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Заказ обновлен');
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -101,11 +104,15 @@ class OrderController extends AppAdminController
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {
+//        $this->findModel($id)->unlinkAll('orderProduct', true);
+        OrderProduct::deleteAll(['order_id' => $id]);
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', 'Заказ удален');
         return $this->redirect(['index']);
     }
 
