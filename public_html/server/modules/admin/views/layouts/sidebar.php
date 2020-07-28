@@ -26,6 +26,10 @@ use yii\helpers\Url;
             </li>
             <li><a href="<?= Url::to(['order/index']) ?>"><i class="fa fa-shopping-cart"></i> <span>Заказы</span></a>
             </li>
+            <li><a href="<?= Url::to(['category/index']) ?>"><i class="fa fa-cubes"></i> <span>Категории</span></a>
+            </li>
+            <li><a href="<?= Url::to(['product/index']) ?>"><i class="fa fa-gamepad"></i> <span>Игры</span></a>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
