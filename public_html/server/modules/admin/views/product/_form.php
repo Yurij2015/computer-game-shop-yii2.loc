@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use mihaildev\ckeditor\CKEditor;
 use \mihaildev\elfinder\ElFinder;
+use kartik\file\FileInput;
+
 mihaildev\elfinder\Assets::noConflict($this);
 
 /* @var $this yii\web\View */
@@ -31,13 +33,10 @@ mihaildev\elfinder\Assets::noConflict($this);
         </select>
     </div>
 
-
-
     <?= $form->field($model, 'content')->widget(CKEditor::class, [
         'editorOptions' => ElFinder::ckeditorOptions('elfinder', [/* Some CKEditor Options */]),
     ]);
     ?>
-
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
@@ -47,7 +46,12 @@ mihaildev\elfinder\Assets::noConflict($this);
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+    <?php // $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'file')->widget(FileInput::class, [
+        'options' => ['accept' => 'image/*'],
+    ]);
+    ?>
 
     <?= $form->field($model, 'is_offer')->dropDownList(['Нет', 'Да']) ?>
 

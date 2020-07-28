@@ -32,7 +32,7 @@ if (!empty($session['cart'])):
                     <td><?= $i ?></td>
                     <td><?= $item['title'] ?></td>
                     <td>
-                        <?= Html::img("@web/game_images/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
+                        <?= Html::img("@web/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
                     </td>
                     <td><?= $item['qty'] ?></td>
                     <td><?= $item['price'] ?></td>

@@ -6,11 +6,7 @@ use yii\helpers\Url;
 ?>
 <div class="card mt-4 mb-4">
 
-    <?php if ($product->img) : ?>
-        <?= Html::img("@web/game_images/{$product->img}", ['alt' => $product->title, 'class' => 'card-img-top']) ?>
-    <?php else: ?>
-        <?= Html::img("@web/game_images/no-image.jpg", ['alt' => $product->title, 'class' => 'card-img-top']) ?>
-    <?php endif; ?>
+        <?= Html::img("@web/{$product->img}", ['alt' => $product->title, 'class' => 'card-img-top']) ?>
 
     <div class="card-body">
         <h3 class="card-title"><?= $product['title'] ?> </h3>

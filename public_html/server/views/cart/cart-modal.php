@@ -16,7 +16,7 @@ if (!empty($session['cart'])): ?>
             <?php foreach ($session['cart'] as $id => $item): ?>
                 <tr>
                     <td>
-                        <?= Html::img("@web/game_images/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
+                        <?= Html::img("@web/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
                     </td>
                     <td><?= $item['title'] ?></td>
                     <td><?= $item['qty'] ?></td>

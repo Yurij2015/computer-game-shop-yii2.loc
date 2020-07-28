@@ -34,7 +34,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <a href="<?= Url::to(['product/view', 'id' => $product->id]) ?>">
-                    <?= Html::img("@web/game_images/{$product->img}", ['alt' => $product->title, 'class' => 'card-img-top']) ?>
+                    <?= Html::img("@web/{$product->img}", ['alt' => $product->title, 'class' => 'card-img-top']) ?>
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">
