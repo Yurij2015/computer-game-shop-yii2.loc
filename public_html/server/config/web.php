@@ -15,7 +15,24 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin',
+            'defaultRoute' => 'main/index',
+        ],
+    ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,   // не опубликовывать комплект
+                    'js' => [
+                        'jquery/jquery.min.js',
+                    ]
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'oSyU7fSy0q4jXVs9dCSUiIZ27aFpo8zR',
@@ -26,6 +43,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => '/admin/auth/login',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -36,6 +54,15 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
+//            'useFileTransport' => false,
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'smtp.mail.ru',
+//                'username' => 'agmin@gameshop.ru',
+//                'password' => 'password',
+//                'port' => '2525', // 465
+//                'encryption' => 'ssl', // tls
+//            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -53,13 +80,28 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+                'category/<id:\d+>/page/<page:\d+>' => 'category/view',
                 'category/<id:\d+>' => 'category/view',
                 'product/<id:\d+>' => 'product/view',
+//                'cart/<id:\d+>' => 'cart/add',
+
 
             ],
         ],
 
     ],
+
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'path' => 'game_images',
+                'name' => 'GameImages'
+            ],
+        ]
+    ],
+
     'params' => $params,
 ];
 
@@ -78,7 +120,9 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+//        'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['*'],
+
     ];
 }
 
